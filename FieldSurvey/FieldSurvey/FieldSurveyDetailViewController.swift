@@ -15,14 +15,17 @@ class FieldSurveyDetailViewController: UIViewController {
 
     @IBOutlet weak var fieldSurveyIconImageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    
+    @IBOutlet weak var descriptionLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .medium
+        
+        self.title = "Observations"
+        
+        descriptionLabel.adjustsFontSizeToFitWidth = true
         
         fieldSurveyIconImageView.image = fieldSurvey?.classificationName.image
         titleLabel.text = fieldSurvey?.title
